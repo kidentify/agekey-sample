@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { UserManager } from 'oidc-client';
+import Image from 'next/image';
 // This page drives two OIDC flows:
 // 1) "Use AgeKey" (implicit-like) -> requests an id_token embedding age threshold results
 // 2) "Create AgeKey" -> starts AgeKey issuance using PAR, then redirects the user
@@ -118,7 +119,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-[#16004E] flex items-center justify-center p-4">
       <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full text-center">
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-gray-800 mb-2">🔐 AgeKey Demo</h1>
@@ -148,7 +149,7 @@ export default function Home() {
           <button
             onClick={handleUseAgeKey}
             disabled={isLoading !== null || !isConfigured}
-            className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 disabled:from-gray-400 disabled:to-gray-500 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 disabled:scale-100 disabled:cursor-not-allowed shadow-lg"
+            className="w-full bg-[#392669] hover:bg-[#2a1a4a] disabled:from-gray-400 disabled:to-gray-500 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 disabled:scale-100 disabled:cursor-not-allowed shadow-lg"
           >
             {isLoading === 'use' ? (
               <div className="flex items-center justify-center">
@@ -156,16 +157,25 @@ export default function Home() {
                 Processing...
               </div>
             ) : !isConfigured ? (
-              'Use AgeKey (Configure Required)'
+              'use my AgeKey (Configure Required)'
             ) : (
-              'Use AgeKey'
+              <div className="flex items-center justify-center">
+                <span className="mr-2">use my</span>
+                <Image 
+                  src="/agekey-text.svg" 
+                  alt="AgeKey" 
+                  width={80} 
+                  height={20}
+                  className="h-5 w-auto"
+                />
+              </div>
             )}
           </button>
           
           <button
             onClick={handleCreateAgeKey}
             disabled={isLoading !== null || !isConfigured}
-            className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 disabled:from-gray-400 disabled:to-gray-500 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 disabled:scale-100 disabled:cursor-not-allowed shadow-lg"
+            className="w-full bg-[#392669] hover:bg-[#2a1a4a] disabled:from-gray-400 disabled:to-gray-500 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 disabled:scale-100 disabled:cursor-not-allowed shadow-lg"
           >
             {isLoading === 'create' ? (
               <div className="flex items-center justify-center">
@@ -173,9 +183,18 @@ export default function Home() {
                 Processing...
               </div>
             ) : !isConfigured ? (
-              'Create AgeKey (Configure Required)'
+              'create my AgeKey (Configure Required)'
             ) : (
-              'Create AgeKey'
+              <div className="flex items-center justify-center">
+                <span className="mr-2">create my</span>
+                <Image 
+                  src="/agekey-text.svg" 
+                  alt="AgeKey" 
+                  width={80} 
+                  height={20}
+                  className="h-5 w-auto"
+                />
+              </div>
             )}
           </button>
         </div>

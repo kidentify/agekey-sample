@@ -147,7 +147,7 @@ function CallbackContent() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 flex items-center justify-center p-4">
+      <div className="min-h-screen bg-[#16004E] flex items-center justify-center p-4">
         <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
           <p className="text-gray-600">Processing AgeKey response...</p>
@@ -157,7 +157,7 @@ function CallbackContent() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-[#16004E] flex items-center justify-center p-4">
       <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full">
         <div className="text-center mb-6">
           {result?.success ? (
@@ -199,7 +199,7 @@ function CallbackContent() {
 
         <button
           onClick={handleBackToHome}
-          className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg"
+          className="w-full bg-[#392669] hover:bg-[#2a1a4a] text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg"
         >
           Back to Demo
         </button>
@@ -211,7 +211,7 @@ function CallbackContent() {
 export default function CallbackPage() {
   return (
     <Suspense fallback={
-      <div className="min-h-screen bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 flex items-center justify-center p-4">
+      <div className="min-h-screen bg-[#16004E] flex items-center justify-center p-4">
         <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
           <p className="text-gray-600">Loading...</p>
