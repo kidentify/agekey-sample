@@ -6,16 +6,14 @@ A Next.js demonstration of AgeKey integration using the `oidc-client` package. T
 
 - 🔐 **Use AgeKey Flow**: Verify age using an existing AgeKey
 - ➕ **Create AgeKey Flow**: Create a new AgeKey after age verification
-- 🎨 **Modern UI**: Beautiful, responsive interface with Tailwind CSS
-- 📱 **Mobile Friendly**: Works on desktop and mobile devices
+- 🎨 **Simple UI**: Responsive interface with Tailwind CSS
 - 🔧 **Easy Configuration**: Simple config file for credentials
-- ⚡ **Next.js 14**: Latest Next.js with App Router and TypeScript
 
 ## Prerequisites
 
-- Node.js 18+ 
-- AgeKey client credentials from OpenAge
-- Registered redirect URI with OpenAge
+- Node.js 18+
+- AgeKey client credentials
+- Registered Redirect URI
 
 ## Quick Start
 
@@ -100,8 +98,6 @@ src/
 
 ### Required Credentials
 
-You need to obtain these from OpenAge:
-
 **Public Variables (exposed to browser):**
 - `NEXT_PUBLIC_AGEKEY_CLIENT_ID` - Your AgeKey client ID
 - `NEXT_PUBLIC_AGEKEY_USE_ISSUER` - Use AgeKey issuer URL (e.g., `https://api.agekey.org/v1/oidc/use`)
@@ -171,7 +167,7 @@ const ageVerification = {
    - Copy from `.env.example` and fill in your values
 
 2. **"Invalid redirect_uri"**
-   - Ensure your redirect URI is registered with OpenAge
+   - Ensure your redirect URI is registered
    - Check that the URI in your `.env.local` file matches exactly
 
 3. **"Invalid client_id"**
