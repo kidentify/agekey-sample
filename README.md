@@ -179,14 +179,6 @@ const ageVerification = {
    - Verify the age verification data format
    - Ensure the Create AgeKey issuer URL is correct
 
-### Debug Mode
-
-Enable detailed logging by setting the environment variable:
-
-```bash
-DEBUG=oidc-client:* npm run dev
-```
-
 ## Dependencies
 
 - **next**: React framework with App Router
