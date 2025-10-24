@@ -23,7 +23,6 @@ export async function POST(req: NextRequest) {
     // Example authorization_details for demo purposes only; replace with your verification payload
     const authorizationDetails = [
       {
-        type: 'age_verification',
         method: 'id_doc_scan',
         age: { date_of_birth: '2000-01-02' },
         verified_at: new Date().toISOString(),
